@@ -134,19 +134,32 @@ npm run format:check # Check formatting without modifying files
 
 ```
 daniel-porto/
-├── public/          # Static files
+├── public/              # Static files (images, icons, etc.)
+│   ├── logo-dark.png
+│   └── logo-light.png
 ├── src/
-│   ├── components/  # React components
-│   ├── lib/         # Utilities and helpers
-│   ├── App.tsx      # Main component
-│   └── main.tsx     # Entry point
-├── .eslint.config.js # ESLint configuration
-├── .prettierrc      # Prettier configuration
-├── components.json  # shadcn/ui configuration
-├── package.json     # Dependencies and scripts
-├── tsconfig.json    # Base TypeScript configuration
-├── tsconfig.app.json # Application TypeScript configuration
-└── vite.config.ts   # Vite configuration
+│   ├── components/      # React components
+│   │   ├── layout/      # Layout components (Header, Footer, etc.)
+│   │   │   └── Header.tsx
+│   │   └── ui/          # shadcn/ui components
+│   │       ├── button.tsx
+│   │       └── theme-toggle-button.tsx
+│   ├── hooks/           # Custom React hooks
+│   │   └── use-theme.ts
+│   ├── lib/             # Utility functions and helpers
+│   │   └── utils.ts
+│   ├── types/           # TypeScript type definitions
+│   │   └── index.ts
+│   ├── App.tsx          # Root component
+│   ├── main.tsx         # Application entry point
+│   └── index.css        # Global styles and Tailwind CSS
+├── .eslint.config.js    # ESLint configuration
+├── .prettierrc          # Prettier configuration
+├── components.json      # shadcn/ui configuration
+├── package.json         # Dependencies and scripts
+├── tsconfig.json        # Base TypeScript configuration
+├── tsconfig.app.json    # Application TypeScript configuration
+└── vite.config.ts       # Vite configuration
 ```
 
 ### 🎯 Features
@@ -289,19 +302,32 @@ npm run format:check # Verifica formatação sem modificar arquivos
 
 ```
 daniel-porto/
-├── public/          # Arquivos estáticos
+├── public/              # Arquivos estáticos (imagens, ícones, etc.)
+│   ├── logo-dark.png
+│   └── logo-light.png
 ├── src/
-│   ├── components/  # Componentes React
-│   ├── lib/         # Utilitários e helpers
-│   ├── App.tsx      # Componente principal
-│   └── main.tsx     # Ponto de entrada
-├── .eslint.config.js # Configuração ESLint
-├── .prettierrc      # Configuração Prettier
-├── components.json  # Configuração shadcn/ui
-├── package.json     # Dependências e scripts
-├── tsconfig.json    # Configuração TypeScript base
-├── tsconfig.app.json # Configuração TypeScript da aplicação
-└── vite.config.ts   # Configuração Vite
+│   ├── components/      # Componentes React
+│   │   ├── layout/      # Componentes de layout (Header, Footer, etc.)
+│   │   │   └── Header.tsx
+│   │   └── ui/          # Componentes shadcn/ui
+│   │       ├── button.tsx
+│   │       └── theme-toggle-button.tsx
+│   ├── hooks/           # Hooks customizados do React
+│   │   └── use-theme.ts
+│   ├── lib/             # Funções utilitárias e helpers
+│   │   └── utils.ts
+│   ├── types/           # Definições de tipos TypeScript
+│   │   └── index.ts
+│   ├── App.tsx          # Componente raiz
+│   ├── main.tsx         # Ponto de entrada da aplicação
+│   └── index.css        # Estilos globais e Tailwind CSS
+├── .eslint.config.js    # Configuração ESLint
+├── .prettierrc          # Configuração Prettier
+├── components.json      # Configuração shadcn/ui
+├── package.json         # Dependências e scripts
+├── tsconfig.json        # Configuração TypeScript base
+├── tsconfig.app.json    # Configuração TypeScript da aplicação
+└── vite.config.ts       # Configuração Vite
 ```
 
 ### 🎯 Recursos
