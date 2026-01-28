@@ -12,6 +12,10 @@ Portfólio pessoal desenvolvido com React, TypeScript e Tailwind CSS.
 
 This is a personal portfolio developed to showcase projects, experiences, and knowledge in software development. The project uses modern technologies and high-quality development tools to ensure clean, performant, and scalable code.
 
+### 📦 Package Manager
+
+This repository uses **Yarn** (`yarn.lock` is committed). Prefer running commands with Yarn.
+
 ### 🚀 Main Technologies
 
 #### **React 19.2.0**
@@ -42,14 +46,20 @@ This is a personal portfolio developed to showcase projects, experiences, and kn
 
 #### **Production Dependencies**
 
+- **`i18next`**: Internationalization engine
+- **`react-i18next`**: React bindings for i18next
 - **`@tailwindcss/vite`** (^4.1.18): Official Tailwind CSS plugin for Vite
+- **`@radix-ui/react-dialog`**: Accessible dialog primitives (used by shadcn/ui `Dialog`)
+- **`@radix-ui/react-slot`**: Slot primitive (used by shadcn/ui `Button`)
 - **`class-variance-authority`** (^0.7.1): Utility for managing CSS class variants in a type-safe way
 - **`clsx`** (^2.1.1): Utility function for conditionally constructing class strings
 - **`lucide-react`** (^0.563.0): Modern and lightweight icon library
+- **`prism-react-renderer`**: Lightweight syntax highlighting for the source code viewer
 - **`react`** (^19.2.0): Main React library
 - **`react-dom`** (^19.2.0): React renderer for DOM
 - **`tailwind-merge`** (^3.4.0): Utility for merging Tailwind classes without conflicts
 - **`tailwindcss`** (^4.1.18): Utility-first CSS framework
+- **`zustand`**: Global state management (theme persistence)
 
 #### **Development Dependencies**
 
@@ -116,18 +126,24 @@ This is a personal portfolio developed to showcase projects, experiences, and kn
 ### 🛠️ Available Scripts
 
 ```bash
+# Install
+yarn
+
 # Development
-npm run dev          # Start development server
-npm run preview      # Preview production build
+yarn dev          # Start development server
+yarn preview      # Preview production build
 
 # Build
-npm run build        # Compile TypeScript and generate production build
+yarn build        # Compile TypeScript and generate production build
 
 # Code Quality
-npm run lint         # Run ESLint
-npm run lint:fix     # Run ESLint and fix issues automatically
-npm run format       # Format code with Prettier
-npm run format:check # Check formatting without modifying files
+yarn lint         # Run ESLint
+yarn lint:fix     # Run ESLint and fix issues automatically
+yarn format       # Format code with Prettier
+yarn format:check # Check formatting without modifying files
+
+# i18n (types)
+yarn i18n:interface # Generate TS types from locales (for IntelliSense in t('...'))
 ```
 
 ### 📁 Project Structure
@@ -140,16 +156,31 @@ daniel-porto/
 ├── src/
 │   ├── components/      # React components
 │   │   ├── layout/      # Layout components (Header, Footer, etc.)
-│   │   │   └── Header.tsx
+│   │   │   └── header.tsx
 │   │   └── ui/          # shadcn/ui components
 │   │       ├── button.tsx
+│   │       ├── button-variants.ts
+│   │       ├── dialog.tsx
+│   │       ├── language-selector.tsx
+│   │       ├── source-code-viewer.tsx
 │   │       └── theme-toggle-button.tsx
 │   ├── hooks/           # Custom React hooks
+│   │   ├── use-language.ts
+│   │   ├── use-source-code.ts
 │   │   └── use-theme.ts
 │   ├── lib/             # Utility functions and helpers
+│   │   ├── i18n.ts
+│   │   ├── react-i18next.d.ts
 │   │   └── utils.ts
-│   ├── types/           # TypeScript type definitions
-│   │   └── index.ts
+│   ├── locales/         # i18n translation files
+│   │   ├── en/
+│   │   │   └── translation.json
+│   │   ├── pt/
+│   │   │   └── translation.json
+│   │   └── resources.d.ts
+│   ├── stores/          # Zustand stores
+│   │   ├── index.ts
+│   │   └── theme-store.ts
 │   ├── App.tsx          # Root component
 │   ├── main.tsx         # Application entry point
 │   └── index.css        # Global styles and Tailwind CSS
@@ -171,6 +202,9 @@ daniel-porto/
 - 🚀 **React Compiler**: Automatic performance optimizations
 - 📦 **Components**: shadcn/ui for reusable components
 - 🎯 **Path Aliases**: Clean imports with `@/`
+- 🌗 **Theme**: Light/dark toggle with persistence (Zustand + `localStorage`)
+- 🌍 **i18n**: English/Portuguese with `react-i18next` + generated TS types for translation keys
+- 🧩 **Source Code Viewer**: Modal that displays component source code with syntax highlighting (Prism)
 
 ---
 
@@ -179,6 +213,10 @@ daniel-porto/
 ### 📋 Sobre o Projeto
 
 Este é um portfólio pessoal desenvolvido para apresentar projetos, experiências e conhecimentos em desenvolvimento de software. O projeto utiliza tecnologias modernas e ferramentas de desenvolvimento de alta qualidade para garantir código limpo, performático e escalável.
+
+### 📦 Gerenciador de Pacotes
+
+Este repositório usa **Yarn** (`yarn.lock` está versionado). Dê preferência a executar os comandos com Yarn.
 
 ### 🚀 Tecnologias Principais
 
@@ -210,14 +248,20 @@ Este é um portfólio pessoal desenvolvido para apresentar projetos, experiênci
 
 #### **Dependências de Produção**
 
+- **`i18next`**: Motor de internacionalização
+- **`react-i18next`**: Integração do i18next com React
 - **`@tailwindcss/vite`** (^4.1.18): Plugin oficial do Tailwind CSS para Vite
+- **`@radix-ui/react-dialog`**: Primitivos acessíveis de Dialog (usado pelo shadcn/ui)
+- **`@radix-ui/react-slot`**: Primitive Slot (usado pelo shadcn/ui `Button`)
 - **`class-variance-authority`** (^0.7.1): Utilitário para gerenciar variantes de classes CSS de forma type-safe
 - **`clsx`** (^2.1.1): Função utilitária para construir strings de classes condicionalmente
 - **`lucide-react`** (^0.563.0): Biblioteca de ícones moderna e leve
+- **`prism-react-renderer`**: Syntax highlighting leve para o visualizador de código
 - **`react`** (^19.2.0): Biblioteca principal do React
 - **`react-dom`** (^19.2.0): Renderizador do React para DOM
 - **`tailwind-merge`** (^3.4.0): Utilitário para mesclar classes Tailwind sem conflitos
 - **`tailwindcss`** (^4.1.18): Framework CSS utility-first
+- **`zustand`**: Gerenciamento de estado global (persistência do tema)
 
 #### **Dependências de Desenvolvimento**
 
@@ -284,18 +328,24 @@ Este é um portfólio pessoal desenvolvido para apresentar projetos, experiênci
 ### 🛠️ Scripts Disponíveis
 
 ```bash
+# Instalar
+yarn
+
 # Desenvolvimento
-npm run dev          # Inicia servidor de desenvolvimento
-npm run preview      # Preview da build de produção
+yarn dev          # Inicia servidor de desenvolvimento
+yarn preview      # Preview da build de produção
 
 # Build
-npm run build        # Compila TypeScript e gera build de produção
+yarn build        # Compila TypeScript e gera build de produção
 
 # Qualidade de Código
-npm run lint         # Executa ESLint
-npm run lint:fix     # Executa ESLint e corrige problemas automaticamente
-npm run format       # Formata código com Prettier
-npm run format:check # Verifica formatação sem modificar arquivos
+yarn lint         # Executa ESLint
+yarn lint:fix     # Executa ESLint e corrige problemas automaticamente
+yarn format       # Formata código com Prettier
+yarn format:check # Verifica formatação sem modificar arquivos
+
+# i18n (tipos)
+yarn i18n:interface # Gera tipos TS a partir das traduções (autocomplete no t('...'))
 ```
 
 ### 📁 Estrutura do Projeto
@@ -308,16 +358,31 @@ daniel-porto/
 ├── src/
 │   ├── components/      # Componentes React
 │   │   ├── layout/      # Componentes de layout (Header, Footer, etc.)
-│   │   │   └── Header.tsx
+│   │   │   └── header.tsx
 │   │   └── ui/          # Componentes shadcn/ui
 │   │       ├── button.tsx
+│   │       ├── button-variants.ts
+│   │       ├── dialog.tsx
+│   │       ├── language-selector.tsx
+│   │       ├── source-code-viewer.tsx
 │   │       └── theme-toggle-button.tsx
 │   ├── hooks/           # Hooks customizados do React
+│   │   ├── use-language.ts
+│   │   ├── use-source-code.ts
 │   │   └── use-theme.ts
 │   ├── lib/             # Funções utilitárias e helpers
+│   │   ├── i18n.ts
+│   │   ├── react-i18next.d.ts
 │   │   └── utils.ts
-│   ├── types/           # Definições de tipos TypeScript
-│   │   └── index.ts
+│   ├── locales/         # Arquivos de tradução i18n
+│   │   ├── en/
+│   │   │   └── translation.json
+│   │   ├── pt/
+│   │   │   └── translation.json
+│   │   └── resources.d.ts
+│   ├── stores/          # Stores Zustand
+│   │   ├── index.ts
+│   │   └── theme-store.ts
 │   ├── App.tsx          # Componente raiz
 │   ├── main.tsx         # Ponto de entrada da aplicação
 │   └── index.css        # Estilos globais e Tailwind CSS
@@ -339,9 +404,12 @@ daniel-porto/
 - 🚀 **React Compiler**: Otimizações automáticas de performance
 - 📦 **Componentes**: shadcn/ui para componentes reutilizáveis
 - 🎯 **Path Aliases**: Imports limpos com `@/`
+- 🌗 **Tema**: Toggle light/dark com persistência (Zustand + `localStorage`)
+- 🌍 **i18n**: Inglês/Português com `react-i18next` + tipos TS gerados para as chaves de tradução
+- 🧩 **Visualizador de Código**: Modal que exibe o código fonte do componente com syntax highlighting (Prism)
 
 ---
 
 ## 📝 License
 
-© 2025 Daniel Porto. All rights reserved.
+© 2026 Daniel Porto. All rights reserved.

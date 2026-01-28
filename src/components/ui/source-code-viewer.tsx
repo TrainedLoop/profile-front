@@ -1,9 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Code } from 'lucide-react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import dracula from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula';
-import oneLight from 'react-syntax-highlighter/dist/cjs/styles/prism/one-light';
+import { Highlight, themes, type Language, type RenderProps } from 'prism-react-renderer';
 import {
   Dialog,
   DialogContent,
@@ -55,8 +53,8 @@ export function SourceCodeViewer({
     [language, displayFileName],
   );
 
-  // Select theme based on current theme - memoized to update when theme changes
-  const syntaxTheme = useMemo(() => (isDark ? dracula : oneLight), [isDark]);
+  // Use predefined themes from prism-react-renderer
+  const theme = useMemo(() => (isDark ? themes.dracula : themes.github), [isDark]);
 
   const defaultTrigger = (
     <Button variant="ghost" size="icon" className={cn('h-8 w-8', className)}>
@@ -77,24 +75,30 @@ export function SourceCodeViewer({
         </DialogHeader>
         <div className="mx-6 mb-6 flex-1 overflow-auto rounded-lg border">
           {sourceCode ? (
-            <SyntaxHighlighter
-              key={isDark ? 'dark' : 'light'}
-              language={detectedLanguage}
-              style={syntaxTheme}
-              customStyle={{
-                margin: 0,
-                padding: '1rem',
-                background: 'transparent',
-                fontSize: '0.875rem',
-                lineHeight: '1.5',
-              }}
-              showLineNumbers
-              wrapLines
-              wrapLongLines
-              PreTag="div"
-            >
-              {sourceCode}
-            </SyntaxHighlighter>
+            <Highlight code={sourceCode} language={detectedLanguage as Language} theme={theme}>
+              {({
+                className: prismClassName,
+                style,
+                tokens,
+                getLineProps,
+                getTokenProps,
+              }: RenderProps) => (
+                <pre className={cn(prismClassName, 'm-0 p-4 text-sm')} style={style}>
+                  {tokens.map((line, i) => (
+                    <div key={i} {...getLineProps({ line })} className="flex gap-4">
+                      <span className="text-muted-foreground w-8 shrink-0 text-right select-none">
+                        {i + 1}
+                      </span>
+                      <span>
+                        {line.map((token, key) => (
+                          <span key={key} {...getTokenProps({ token })} />
+                        ))}
+                      </span>
+                    </div>
+                  ))}
+                </pre>
+              )}
+            </Highlight>
           ) : (
             <div className="text-muted-foreground flex items-center justify-center py-8">
               {t('sourceCode.loading')}
