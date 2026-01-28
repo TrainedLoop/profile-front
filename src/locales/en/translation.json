@@ -27,5 +27,19 @@
     "selectLanguage": "Select Language",
     "selectLanguageDescription": "Choose your preferred language",
     "selectLanguageAriaLabel": "Select language"
+  },
+  "metrics": {
+    "title": "Site metrics",
+    "note": "Measured in your browser (INP updates after interaction).",
+    "fcp": "FCP",
+    "fcp_desc": "Time until the first content appears on screen.",
+    "lcp": "LCP",
+    "lcp_desc": "Time until the largest element is visible.",
+    "inp": "INP",
+    "inp_desc": "How quickly the page responds to interactions.",
+    "cls": "CLS",
+    "cls_desc": "Visual stability (layout shifts) during load.",
+    "ttfb": "TTFB",
+    "ttfb_desc": "Time to first byte from the server."
   }
 }

@@ -1,6 +1,3 @@
 User-agent: *
 Allow: /
 
-# If you later add a sitemap, uncomment:
-# Sitemap: https://your-domain.com/sitemap.xml
-
