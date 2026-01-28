@@ -26,7 +26,6 @@ export const ThemeToggleButton = React.forwardRef<HTMLButtonElement, ThemeToggle
 
     return (
       <button
-        aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         className={cn(
           'relative inline-flex h-10 w-10 items-center justify-center',
           'rounded-lg text-sm font-medium',

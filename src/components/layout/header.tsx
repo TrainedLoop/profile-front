@@ -1,8 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '@/hooks/use-theme';
 import { ThemeToggleButton } from '@/components/ui/theme-toggle-button';
 import { SourceCodeViewer } from '@/components/ui/source-code-viewer';
+import { LanguageSelector } from '@/components/ui/language-selector';
 
 export function Header() {
+  const { t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
 
@@ -13,12 +16,15 @@ export function Header() {
         <div className="flex items-center gap-2">
           <img
             src={isDark ? '/logo-dark.png' : '/logo-light.png'}
-            alt="Daniel Porto"
+            alt={t('header.logoAlt')}
             className="h-8 w-auto sm:h-10"
           />
         </div>
 
         <div className="flex items-center gap-2">
+          {/* Language Selector */}
+          <LanguageSelector />
+
           {/* Source Code Viewer */}
           <SourceCodeViewer filePath="components/layout/header.tsx" fileName="header.tsx" />
 
@@ -27,6 +33,7 @@ export function Header() {
             isDark={isDark}
             onToggle={() => toggleTheme()}
             className="hover:bg-accent text-foreground bg-transparent"
+            aria-label={isDark ? t('header.switchToLightMode') : t('header.switchToDarkMode')}
           />
         </div>
       </div>

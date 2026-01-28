@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Code } from 'lucide-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import dracula from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula';
@@ -33,6 +34,7 @@ export function SourceCodeViewer({
   trigger,
   className,
 }: SourceCodeViewerProps) {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const { theme } = useTheme();
   const loadedSourceCode = useSourceCode(filePath || '');
@@ -59,7 +61,7 @@ export function SourceCodeViewer({
   const defaultTrigger = (
     <Button variant="ghost" size="icon" className={cn('h-8 w-8', className)}>
       <Code className="h-4 w-4" />
-      <span className="sr-only">View source code</span>
+      <span className="sr-only">{t('header.viewSourceCode')}</span>
     </Button>
   );
 
@@ -68,8 +70,10 @@ export function SourceCodeViewer({
       <DialogTrigger asChild>{trigger || defaultTrigger}</DialogTrigger>
       <DialogContent className="flex max-h-[90vh] flex-col p-0 sm:max-w-[90vw]">
         <DialogHeader className="px-6 pt-6">
-          <DialogTitle>Source Code: {displayFileName}</DialogTitle>
-          <DialogDescription>View the source code for this component</DialogDescription>
+          <DialogTitle>
+            {t('sourceCode.title')}: {displayFileName}
+          </DialogTitle>
+          <DialogDescription>{t('sourceCode.description')}</DialogDescription>
         </DialogHeader>
         <div className="mx-6 mb-6 flex-1 overflow-auto rounded-lg border">
           {sourceCode ? (
@@ -93,7 +97,7 @@ export function SourceCodeViewer({
             </SyntaxHighlighter>
           ) : (
             <div className="text-muted-foreground flex items-center justify-center py-8">
-              Loading source code...
+              {t('sourceCode.loading')}
             </div>
           )}
         </div>

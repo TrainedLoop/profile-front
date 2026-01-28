@@ -1,0 +1,31 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "hello": "Hello World",
+    "loading": "Loading...",
+    "error": "Error",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "header": {
+    "logoAlt": "Daniel Porto",
+    "viewSourceCode": "View source code",
+    "switchToLightMode": "Switch to light mode",
+    "switchToDarkMode": "Switch to dark mode"
+  },
+  "home": {
+    "title": "Hello World",
+    "subtitle": "React + TypeScript + Vite + Tailwind CSS"
+  },
+  "sourceCode": {
+    "title": "Source Code",
+    "description": "View the source code for this component",
+    "loading": "Loading source code..."
+  },
+  "language": {
+    "selectLanguage": "Select Language",
+    "selectLanguageDescription": "Choose your preferred language",
+    "selectLanguageAriaLabel": "Select language"
+  }
+}
