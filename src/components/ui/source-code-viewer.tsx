@@ -36,7 +36,7 @@ export function SourceCodeViewer({
 }: SourceCodeViewerProps) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
-  const { theme } = useTheme();
+  const { isDark } = useTheme();
   const loadedSourceCode = useSourceCode(filePath || '');
 
   // Use provided sourceCode or loaded from filePath
@@ -56,7 +56,7 @@ export function SourceCodeViewer({
   );
 
   // Select theme based on current theme - memoized to update when theme changes
-  const syntaxTheme = useMemo(() => (theme === 'dark' ? dracula : oneLight), [theme]);
+  const syntaxTheme = useMemo(() => (isDark ? dracula : oneLight), [isDark]);
 
   const defaultTrigger = (
     <Button variant="ghost" size="icon" className={cn('h-8 w-8', className)}>
@@ -78,7 +78,7 @@ export function SourceCodeViewer({
         <div className="mx-6 mb-6 flex-1 overflow-auto rounded-lg border">
           {sourceCode ? (
             <SyntaxHighlighter
-              key={theme}
+              key={isDark ? 'dark' : 'light'}
               language={detectedLanguage}
               style={syntaxTheme}
               customStyle={{

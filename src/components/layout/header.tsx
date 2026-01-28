@@ -6,8 +6,7 @@ import { LanguageSelector } from '@/components/ui/language-selector';
 
 export function Header() {
   const { t } = useTranslation();
-  const { theme, toggleTheme } = useTheme();
-  const isDark = theme === 'dark';
+  const { isDark, toggleTheme } = useTheme();
 
   return (
     <header className="bg-background/95 supports-backdrop-filter:bg-background/60 border-border fixed inset-x-0 top-0 z-50 w-full border-b backdrop-blur">

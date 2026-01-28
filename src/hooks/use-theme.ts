@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useThemeStore } from '@/stores/theme-store';
 
 export function useTheme() {
@@ -5,5 +6,8 @@ export function useTheme() {
   const setTheme = useThemeStore(state => state.setTheme);
   const toggleTheme = useThemeStore(state => state.toggleTheme);
 
-  return { theme, setTheme, toggleTheme };
+  const isDark = useMemo(() => theme === 'dark', [theme]);
+  const isLight = useMemo(() => theme === 'light', [theme]);
+
+  return { theme, setTheme, toggleTheme, isDark, isLight };
 }
