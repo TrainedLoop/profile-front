@@ -15,6 +15,26 @@ interface Resources {
       switchToLightMode: 'Switch to light mode';
       viewSourceCode: 'View source code';
     };
+    hero: {
+      cta: {
+        contact: 'Get in Touch';
+        downloadCV: 'Download CV';
+        viewMetrics: 'View Metrics';
+        viewProjects: 'View Projects';
+      };
+      description: 'Transforming ideas into scalable digital solutions';
+      greeting: "Hello, I'm";
+      location: 'Rio de Janeiro, Brazil';
+      name: 'Daniel Porto';
+      social: {
+        email: 'Send email';
+        github: 'Visit GitHub profile';
+        linkedin: 'Visit LinkedIn profile';
+      };
+      subdescription: 'FullStack Developer with 10+ years of experience. Specialized in React Web applications, C# backend services, and React Native mobile development. Passionate about building robust APIs, seamless integrations, and delivering exceptional user experiences.';
+      techStack: 'Tech Stack';
+      title: 'Fullstack Developer | C# | JavaScript | TypeScript';
+    };
     home: {
       subtitle: 'React + TypeScript + Vite + Tailwind CSS';
       title: 'Hello World';
@@ -33,7 +53,7 @@ interface Resources {
       inp_desc: 'How quickly the page responds to interactions.';
       lcp: 'LCP';
       lcp_desc: 'Time until the largest element is visible.';
-      note: 'Measured in your browser';
+      note: 'Measured in your browser (INP updates after interaction).';
       title: 'Site metrics';
       ttfb: 'TTFB';
       ttfb_desc: 'Time to first byte from the server.';

@@ -41,5 +41,25 @@
     "cls_desc": "Estabilidade visual durante o carregamento.",
     "ttfb": "TTFB",
     "ttfb_desc": "Tempo até o primeiro byte do servidor."
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "Daniel Porto",
+    "title": "Desenvolvedor Fullstack | C# | JavaScript | TypeScript",
+    "location": "Rio de Janeiro, Brasil",
+    "description": "Transformando ideias em soluções digitais escaláveis",
+    "subdescription": "Desenvolvedor FullStack com 10+ anos de experiência. Especializado em aplicações React Web, serviços backend em C# e desenvolvimento mobile com React Native. Apaixonado por construir APIs robustas, integrações perfeitas e entregar experiências excepcionais aos usuários.",
+    "techStack": "Stack Tecnológica",
+    "cta": {
+      "contact": "Entre em Contato",
+      "viewProjects": "Ver Projetos",
+      "viewMetrics": "Ver Métricas",
+      "downloadCV": "Baixar CV"
+    },
+    "social": {
+      "linkedin": "Visitar perfil do LinkedIn",
+      "github": "Visitar perfil do GitHub",
+      "email": "Enviar email"
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { SourceCodeViewer } from '@/components/ui/source-code-viewer';
+import { SourceCodeHover } from '@/components/ui/source-code-hover';
 type Tone = 'good' | 'meh' | 'poor' | 'neutral';
 
 function toneClass(tone: Tone) {
@@ -23,21 +23,18 @@ interface MetricCardProps {
 
 export function MetricCard({ label, description, valueText, tone }: MetricCardProps) {
   return (
-    <div className="bg-card text-card-foreground border-border rounded-xl border px-4 py-2">
+    <SourceCodeHover
+      filePath="components/metrics/metric-card.tsx"
+      fileName="metric-card.tsx"
+      className="bg-card text-card-foreground border-border rounded-xl border px-4 py-2"
+    >
       <div className="flex items-center justify-between gap-2">
         <div className="text-muted-foreground text-xs leading-none font-medium">{label}</div>
-        <div className="shrink-0">
-          <SourceCodeViewer
-            filePath="components/metrics/metric-card.tsx"
-            fileName="metric-card.tsx"
-            className="h-7 w-7"
-          />
-        </div>
       </div>
       <div className="text-muted-foreground text-xs leading-snug">{description}</div>
       <div className={`mt-1 text-2xl leading-snug font-semibold tabular-nums ${toneClass(tone)}`}>
         {valueText}
       </div>
-    </div>
+    </SourceCodeHover>
   );
 }

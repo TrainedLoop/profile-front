@@ -41,5 +41,25 @@
     "cls_desc": "Visual stability (layout shifts) during load.",
     "ttfb": "TTFB",
     "ttfb_desc": "Time to first byte from the server."
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Daniel Porto",
+    "title": "Fullstack Developer | C# | JavaScript | TypeScript",
+    "location": "Rio de Janeiro, Brazil",
+    "description": "Transforming ideas into scalable digital solutions",
+    "subdescription": "FullStack Developer with 10+ years of experience. Specialized in React Web applications, C# backend services, and React Native mobile development. Passionate about building robust APIs, seamless integrations, and delivering exceptional user experiences.",
+    "techStack": "Tech Stack",
+    "cta": {
+      "contact": "Get in Touch",
+      "viewProjects": "View Projects",
+      "viewMetrics": "View Metrics",
+      "downloadCV": "Download CV"
+    },
+    "social": {
+      "linkedin": "Visit LinkedIn profile",
+      "github": "Visit GitHub profile",
+      "email": "Send email"
+    }
   }
 }

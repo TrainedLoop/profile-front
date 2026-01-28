@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MetricCard } from '@/components/metrics/metric-card';
 import { useWebVitals, type MetricKey } from '@/components/metrics/use-web-vitals';
-import { SourceCodeViewer } from '@/components/ui/source-code-viewer';
+import { SourceCodeHover } from '@/components/ui/source-code-hover';
 
 type Tone = 'good' | 'meh' | 'poor' | 'neutral';
 
@@ -50,19 +50,19 @@ export function SiteMetricsCards() {
   );
 
   return (
-    <section aria-label={t('metrics.title')} className="space-y-3">
-      <div className="flex items-baseline justify-between gap-4">
+    <section id="site-metrics" aria-label={t('metrics.title')} className="space-y-3">
+      <SourceCodeHover
+        filePath="components/metrics/site-metrics-cards.tsx"
+        fileName="site-metrics-cards.tsx"
+        className="flex items-baseline justify-between gap-4"
+      >
         <h2 className="text-foreground text-sm font-semibold tracking-wide">
           {t('metrics.title')}
         </h2>
         <div className="flex items-center gap-2">
           <p className="text-muted-foreground text-xs">{t('metrics.note')}</p>
-          <SourceCodeViewer
-            filePath="components/metrics/site-metrics-cards.tsx"
-            fileName="site-metrics-cards.tsx"
-          />
         </div>
-      </div>
+      </SourceCodeHover>
 
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
         {items.map(item => (

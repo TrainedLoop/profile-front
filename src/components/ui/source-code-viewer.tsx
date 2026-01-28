@@ -73,7 +73,12 @@ export function SourceCodeViewer({
           </DialogTitle>
           <DialogDescription>{t('sourceCode.description')}</DialogDescription>
         </DialogHeader>
-        <div className="mx-6 mb-6 flex-1 overflow-auto rounded-lg border">
+        <div
+          className={cn(
+            'mx-6 mb-6 flex-1 overflow-auto rounded-lg border',
+            isDark ? 'bg-muted/20' : 'bg-muted',
+          )}
+        >
           {sourceCode ? (
             <Highlight code={sourceCode} language={detectedLanguage as Language} theme={theme}>
               {({
@@ -83,7 +88,10 @@ export function SourceCodeViewer({
                 getLineProps,
                 getTokenProps,
               }: RenderProps) => (
-                <pre className={cn(prismClassName, 'm-0 p-4 text-sm')} style={style}>
+                <pre
+                  className={cn(prismClassName, 'm-0 min-h-full p-4 text-sm')}
+                  style={{ ...style, backgroundColor: 'transparent' }}
+                >
                   {tokens.map((line, i) => (
                     <div key={i} {...getLineProps({ line })} className="flex gap-4">
                       <span className="text-muted-foreground w-8 shrink-0 text-right select-none">
