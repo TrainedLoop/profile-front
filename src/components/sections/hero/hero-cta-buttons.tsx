@@ -18,7 +18,7 @@ export function HeroCTAButtons() {
       <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
         <Button
           size="lg"
-          className="group relative w-full sm:w-auto"
+          className="group relative w-full cursor-pointer sm:w-auto"
           onClick={() => scrollToSection(SECTION_IDS.contact)}
         >
           {t('hero.cta.contact')}
@@ -28,7 +28,7 @@ export function HeroCTAButtons() {
         <Button
           variant="outline"
           size="lg"
-          className="group w-full sm:w-auto"
+          className="group w-full cursor-pointer sm:w-auto"
           onClick={() => scrollToSection(SECTION_IDS.projects)}
         >
           {t('hero.cta.viewProjects')}
@@ -37,7 +37,7 @@ export function HeroCTAButtons() {
         <Button
           variant="outline"
           size="lg"
-          className="group w-full sm:w-auto"
+          className="group w-full cursor-pointer sm:w-auto"
           onClick={() => scrollToSection(SECTION_IDS.metrics)}
         >
           {t('hero.cta.viewMetrics')}
