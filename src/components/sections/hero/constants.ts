@@ -10,7 +10,7 @@ export const SOCIAL_LINKS = [
     external: true,
   },
   {
-    href: 'https://github.com/dankobaia',
+    href: 'https://github.com/trainedloop',
     icon: Github,
     ariaLabelKey: 'hero.social.github' as const,
     external: true,
@@ -29,4 +29,6 @@ export const SECTION_IDS = {
   metrics: 'site-metrics',
 } as const;
 
-export const LINKEDIN_PROFILE_URL = 'https://www.linkedin.com/in/daniel-porto';
+export const CV_PDF_URL = '/profile.pdf';
+
+export const CONTACT_EMAIL_URL = 'mailto:contato@danielporto.com.br';

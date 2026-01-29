@@ -61,5 +61,183 @@
       "github": "Visitar perfil do GitHub",
       "email": "Enviar email"
     }
+  },
+  "projects": {
+    "title": "Experiência Profissional",
+    "subtitle": "Uma jornada através das empresas e projetos que moldaram minha carreira",
+    "projectsTitle": "Projetos",
+    "projectsTitle_one": "{{count}} Projeto",
+    "projectsTitle_other": "{{count}} Projetos",
+    "companies": {
+      "purpleMetrics": {
+        "name": "Purple Metrics",
+        "role": "Desenvolvedor FrontEnd Senior",
+        "period": "setembro de 2022 - Presente",
+        "location": "Brasil",
+        "description": "Desenvolvimento do dashboard frontend para plataforma de attribution model estatístico que analisa dados históricos para atribuir conversões em todos os canais de marketing (TV, redes sociais orgânicas, OOH, eventos, influenciadores, etc.), medindo impactos diretos e indiretos ao longo do tempo.",
+        "projects": {
+          "purpleDashboardV2": {
+            "name": "Purple Dashboard",
+            "description": "Plataforma completa de analytics e attribution model com dashboards interativos, visualizações de dados em tempo real e análise de performance de campanhas de marketing. Sistema robusto de gestão de dados com importação, validação e processamento de grandes volumes de informações.",
+            "categories": {
+              "architecture": {
+                "name": "Arquitetura & Estrutura",
+                "items": [
+                  "Defini completamente a arquitetura do projeto frontend e padrões de código que foram seguidos pela equipe de frontend (2 desenvolvedores)",
+                  "Implementei arquitetura baseada em Atomic Design com componentes reutilizáveis (atoms/molecules/organisms), estabelecendo padrões de organização e reutilização",
+                  "Configurei code splitting automático com lazy loading de páginas para otimização de performance",
+                  "Desenvolvi sistema de tradução completo (i18next) com geração automática de tipos TypeScript para garantir type-safety nas traduções"
+                ]
+              },
+              "dataFetching": {
+                "name": "Data Fetching & Performance",
+                "items": [
+                  "Implementei sistema de data fetching com React Query e prefetching via route loaders",
+                  "Desenvolvi validação de dados em runtime com Zod e Axios interceptors",
+                  "Otimizei performance para grandes volumes de dados"
+                ]
+              },
+              "devops": {
+                "name": "DevOps & CI/CD",
+                "items": [
+                  "Estruturei completamente o CI/CD com GitHub Actions usando workflows modulares e reutilizáveis, evitando duplicação de código e facilitando manutenção",
+                  "Desenvolvi sistema automatizado de 5 ambientes QA (QA-1 a QA-5) com labels dinâmicas e deployments automáticos baseados em pull requests",
+                  "Implementei comunicação multi-repositório para deploy via Terraform com GitOps usando webhooks para trigger de workflows no repositório de infraestrutura",
+                  "Configurei autenticação segura com AWS OIDC e GitHub App para acesso cross-repository sem necessidade de secrets estáticos",
+                  "Desenvolvi deploy automatizado para ECR com tags imutáveis e integração completa com infraestrutura como código"
+                ]
+              },
+              "designSystem": {
+                "name": "Design System & UI",
+                "items": [
+                  "Desenvolvi tema customizado com Tailwind CSS e design system documentado no Storybook",
+                  "Implementei componentes visuais com Recharts para visualizações de dados complexas"
+                ]
+              },
+              "quality": {
+                "name": "Qualidade & Monitoramento",
+                "items": [
+                  "Configurei error tracking com Bugsnag e feature flags com ConfigCat",
+                  "Configurei linting e formatação automática com ESLint e Prettier"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "fu2re": {
+        "name": "fu2re smart solutions",
+        "role": "Desenvolvedor FullStack Senior",
+        "period": "agosto de 2019 - junho de 2023",
+        "location": "Rio de Janeiro e Região, Brasil",
+        "description": "Desenvolvimento de soluções inteligentes incluindo aplicativos mobile, plataformas web e sistemas de gestão de ativos.",
+        "projects": {
+          "smartVision": {
+            "name": "SmartVision AI",
+            "description": "Plataforma no-code para treinamento e inferência de modelos de IA/Visão computacional que democratiza o acesso à inteligência artificial. Permite que equipes de negócio treinem e atualizem modelos de forma ágil, sem necessidade de conhecimento técnico avançado, através de interface intuitiva para upload, classificação, rotulagem, treinamento, validação e implantação de modelos.",
+            "categories": {
+              "backend": {
+                "name": "Backend & Arquitetura",
+                "items": [
+                  "Desenvolvi APIs em C# com .NET 10 para suporte completo da aplicação ReactJS, integrando toda a fila de treinamento e inferência de modelos",
+                  "Criei e estruturei processos assíncronos com Hangfire e posteriormente migrei para Azure Queue para melhor escalabilidade",
+                  "Implementei arquitetura CQRS onde a entrada de dados era feita junto ao MySQL (facilitando a consulta da equipe de Visão) e a consulta de dados consolidados do frontend era feita em MongoDB",
+                  "Realizei migração completa para Azure Container Apps com arquitetura de microserviços, decompondo o sistema em 8 microserviços por domínio",
+                  "Configurei comunicação entre serviços usando message queues e requisições HTTP, com 8 containers principais e múltiplas réplicas com autoscaling configurado",
+                  "Desenvolvi sistema de upload e processamento de imagens e vídeos capaz de processar até 1TB de dados por dia para treinamento dos modelos"
+                ]
+              },
+              "frontend": {
+                "name": "Frontend & UX",
+                "items": [
+                  "Desenvolvi interface no-code intuitiva com ReactJS, Redux e Styled Components para facilitar o uso por equipes não técnicas",
+                  "Implementei fluxo completo de classificação e rotulagem de imagens na plataforma",
+                  "Criei dashboards de validação com métricas de acurácia e matriz de confusão para análise de desempenho dos modelos"
+                ]
+              },
+              "devops": {
+                "name": "DevOps & CI/CD",
+                "items": [
+                  "Estruturei e implementei CI/CD completo tanto para backend quanto para frontend",
+                  "Configurei pipelines de deploy automatizado para Azure Container Apps"
+                ]
+              }
+            }
+          },
+          "smartAssets": {
+            "name": "SmartAssets",
+            "description": "Solução para inventário automatizado de ativos de iluminação pública utilizando visão computacional, câmeras embarcadas e GNSS integrado. Realiza mapeamento de postes, lâmpadas e transformadores com alta acurácia, até 100 vezes mais rápido que métodos tradicionais, gerando dados estruturados e auditáveis integrados com sistemas GIS.",
+            "categories": {
+              "frontend": {
+                "name": "Aplicação Web & Navegação",
+                "items": [
+                  "Desenvolvi completamente uma aplicação web React para navegação de veículos em campo, rodando em tablets e funcionando totalmente offline",
+                  "Implementei integração via WiFi local com sistema de câmeras embarcadas e receptor GNSS para captura de imagens e posicionamento geográfico em tempo real",
+                  "Criei sistema de armazenamento local com PostgreSQL e armazenamento físico de imagens, permitindo operação contínua mesmo sem conexão à internet",
+                  "Desenvolvi sistema de sincronização automática para migração dos dados capturados para Azure quando há conexão disponível, com processamento em lote para otimização"
+                ]
+              },
+              "backend": {
+                "name": "Backend & API",
+                "items": [
+                  "Desenvolvi API REST em Python (Bottle) para gerenciamento de posição geográfica em tempo real e armazenamento de dados capturados em campo, suportando até 40 requisições por segundo",
+                  "Implementei endpoints para comunicação entre a aplicação web e os sistemas de hardware (câmeras e GPS) via rede WiFi local",
+                  "Criei sistema de processamento e armazenamento de dados georreferenciados e imagens em PostgreSQL",
+                  "Configurei sistema de sincronização com fila e retry automático para garantir entrega dos dados mesmo em caso de falhas temporárias",
+                  "Implementei monitoramento e logging completo para rastreabilidade e debugging do sistema"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "fulllab": {
+        "name": "Fullab | retail solutions",
+        "role": "Líder técnico desenvolvedor senior",
+        "period": "maio de 2017 - agosto de 2019",
+        "location": "Rio de Janeiro e Região, Brasil",
+        "description": "Desenvolvimento de soluções para e-commerce e integrações com plataformas de varejo, incluindo APIs, plugins e sistemas de migração de dados.",
+        "projects": {
+          "mobfiq": {
+            "name": "Mobfiq.com.br",
+            "description": "Plataforma de integração com e-commerce desenvolvida para conectar sistemas de varejo. Reestruturação completa da plataforma para suporte às novas demandas dos clientes, com arquitetura moderna e APIs unificadas.",
+            "categories": {
+              "architecture": {
+                "name": "Arquitetura & API",
+                "items": [
+                  "Reestruturei completamente o projeto para suporte das novas demandas dos clientes",
+                  "Implementei API comum para todos os clientes com injeção de dependência para novas plataformas e cenários específicos"
+                ]
+              },
+              "integration": {
+                "name": "Integração & E-commerce",
+                "items": [
+                  "Desenvolvi API de integração com a plataforma de e-commerce VTEX utilizando .NET 4.5, Dapper e MySQL, suportando milhares de clientes",
+                  "Realizei estudo extensivo do comportamento da plataforma VTEX através de engenharia reversa durante semanas/meses (não existiam documentações disponíveis)",
+                  "Implementei integração completa com todo o processo de compra da VTEX (pedidos, produtos, estoque, carrinho, checkout)",
+                  "Criei sistema de alertas para detectar mudanças na plataforma VTEX e adaptar rapidamente a integração quando necessário",
+                  "Desenvolvi endpoints para aplicação mobile e integração com sistemas de terceiros"
+                ]
+              }
+            }
+          },
+          "moblite": {
+            "name": "Moblite (lojaintegrada.com.br)",
+            "description": "Sistema de integração de e-commerce através de engenharia reversa, permitindo sincronização de dados sem APIs oficiais. Solução desenvolvida para conectar plataformas de e-commerce através de web scraping e automação.",
+            "categories": {
+              "integration": {
+                "name": "Integração & Engenharia Reversa",
+                "items": [
+                  "Desenvolvi integração de e-commerce através de engenharia reversa com webscraper e Selenium, conectando centenas de lojas simultaneamente",
+                  "Criei APIs em .NET Core e MongoDB para armazenamento e processamento dos dados capturados de múltiplas plataformas",
+                  "Implementei sistema automatizado de sincronização de dados entre plataformas sem APIs oficiais",
+                  "Desenvolvi sistema de alertas para detectar mudanças de layout nas lojas e adaptar rapidamente os seletores e scripts de scraping quando necessário"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

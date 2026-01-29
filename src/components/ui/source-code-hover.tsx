@@ -99,7 +99,7 @@ export function SourceCodeHover({ filePath, fileName, className, children }: Sou
       <div
         ref={overlayRef}
         className={cn(
-          'absolute top-0 right-0 z-10',
+          'absolute top-2 right-2 z-10',
           // Desktop: show on hover/focus. Touch: show via state.
           showOverlay
             ? 'opacity-100'

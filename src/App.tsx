@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/header';
 import { Hero } from '@/components/sections/hero';
 import { SiteMetricsCards } from '@/components/metrics/site-metrics-cards';
+import { Projects } from '@/components/sections/projects';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <div className="mx-auto max-w-5xl space-y-12 sm:space-y-16">
             <Hero />
             <SiteMetricsCards />
+            <Projects />
           </div>
         </div>
       </main>
