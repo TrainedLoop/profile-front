@@ -1,4 +1,5 @@
 import { Linkedin, Github, Mail } from 'lucide-react';
+import cvPdfUrl from '@/assets/profile.pdf';
 
 export const TECH_STACK = ['React', 'TypeScript', 'C#', 'React Native', 'Node.js'] as const;
 
@@ -29,6 +30,6 @@ export const SECTION_IDS = {
   metrics: 'site-metrics',
 } as const;
 
-export const CV_PDF_URL = '/profile.pdf';
+export const CV_PDF_URL = cvPdfUrl;
 
 export const CONTACT_EMAIL_URL = 'mailto:contato@danielporto.com.br';

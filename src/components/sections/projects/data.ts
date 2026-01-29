@@ -1,4 +1,7 @@
 import type { Company } from './types';
+import purpleMetricsLogo from '@/assets/purplemetrics.svg';
+import fu2reLogo from '@/assets/fu2re.jpg';
+import fulllabLogo from '@/assets/fulllab.jpg';
 
 /**
  * Companies data structure.
@@ -13,7 +16,7 @@ export const COMPANIES: Company[] = [
     period: 'purpleMetrics',
     location: 'purpleMetrics',
     description: 'purpleMetrics',
-    logoUrl: '/purplemetrics.svg',
+    logoUrl: purpleMetricsLogo,
     websiteUrl: 'https://www.purplemetrics.com.br/',
     projects: [
       {
@@ -64,7 +67,7 @@ export const COMPANIES: Company[] = [
     period: 'fu2re',
     location: 'fu2re',
     description: 'fu2re',
-    logoUrl: '/fu2re.jpg',
+    logoUrl: fu2reLogo,
     websiteUrl: 'https://fu2re.com.br/',
     projects: [
       {
@@ -122,7 +125,7 @@ export const COMPANIES: Company[] = [
     period: 'fulllab',
     location: 'fulllab',
     description: 'fulllab',
-    logoUrl: '/fulllab.jpg',
+    logoUrl: fulllabLogo,
     websiteUrl: 'https://fulllab.com.br/',
     projects: [
       {
