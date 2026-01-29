@@ -2,9 +2,9 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '@/hooks/use-theme';
 import { ThemeToggleButton } from '@/components/ui/theme-toggle-button';
 import { SourceCodeViewer } from '@/components/ui/source-code-viewer';
-import logoDark from '@/assets/ico-dark.png';
-import logoLight from '@/assets/ico-light.png';
-import { LanguageSelector } from '@/components/ui/language-selector';
+import logoDark from '@/assets/logo-dark.png';
+import logoLight from '@/assets/logo-light.png';
+import { LanguageSelector } from '../ui/language-selector';
 
 export function Header() {
   const { t } = useTranslation();
