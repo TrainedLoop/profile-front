@@ -26,6 +26,12 @@ const getInitialLanguage = (): string => {
   return 'en';
 };
 
+i18n.on('initialized', () => {
+  if (typeof window !== 'undefined') {
+    document.documentElement.lang = i18n.language;
+  }
+});
+
 i18n.use(initReactI18next).init({
   resources,
   lng: getInitialLanguage(),
@@ -42,6 +48,8 @@ i18n.use(initReactI18next).init({
 i18n.on('languageChanged', lng => {
   if (typeof window !== 'undefined') {
     localStorage.setItem('i18nextLng', lng);
+    // Keep <html lang=""> in sync for accessibility/SEO
+    document.documentElement.lang = lng;
   }
 });
 
