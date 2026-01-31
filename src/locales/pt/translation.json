@@ -30,7 +30,7 @@
   },
   "metrics": {
     "title": "Métricas do site",
-    "note": "Medidas no seu navegador (INP atualiza após interação).",
+    "note": "Medidas no seu navegador.",
     "fcp": "FCP",
     "fcp_desc": "Tempo até o primeiro conteúdo aparecer na tela.",
     "lcp": "LCP",
@@ -40,7 +40,11 @@
     "cls": "CLS",
     "cls_desc": "Estabilidade visual durante o carregamento.",
     "ttfb": "TTFB",
-    "ttfb_desc": "Tempo até o primeiro byte do servidor."
+    "ttfb_desc": "Tempo até o primeiro byte do servidor.",
+    "load": "Load",
+    "load_desc": "Tempo até a página estar totalmente carregada.",
+    "resources": "Resources",
+    "resources_desc": "Número de requisições de rede (menos = mais enxuto)."
   },
   "hero": {
     "greeting": "Olá, eu sou",
@@ -49,11 +53,11 @@
     "location": "Rio de Janeiro, Brasil",
     "description": "Transformando ideias em soluções digitais escaláveis",
     "subdescription": "Desenvolvedor FullStack com 10+ anos de experiência. Especializado em aplicações React Web, serviços backend em C# e desenvolvimento mobile com React Native. Apaixonado por construir APIs robustas, integrações perfeitas e entregar experiências excepcionais aos usuários.",
-    "techStack": "Stack Tecnológica",
+    "techStack": "Tech Stack",
     "cta": {
-      "contact": "Entre em Contato",
-      "viewProjects": "Ver Projetos",
-      "viewMetrics": "Ver Métricas",
+      "contact": "Contato",
+      "viewProjects": "Projetos",
+      "viewMetrics": "Métricas",
       "downloadCV": "Baixar CV"
     },
     "social": {

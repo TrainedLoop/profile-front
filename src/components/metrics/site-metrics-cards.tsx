@@ -6,26 +6,23 @@ import { SourceCodeHover } from '@/components/ui/source-code-hover';
 
 type Tone = 'good' | 'meh' | 'poor' | 'neutral';
 
-const METRICS_ORDER: MetricKey[] = ['FCP', 'LCP', 'INP', 'CLS', 'TTFB'];
+const METRICS_ORDER: MetricKey[] = ['FCP', 'LCP', 'TTFB', 'LOAD'];
 
 function classify(metric: MetricKey, value: number): Exclude<Tone, 'neutral'> {
-  // Thresholds from Web Vitals guidance
+  // Thresholds from Web Vitals / common guidance
   switch (metric) {
     case 'LCP':
       return value <= 2500 ? 'good' : value <= 4000 ? 'meh' : 'poor';
-    case 'INP':
-      return value <= 200 ? 'good' : value <= 500 ? 'meh' : 'poor';
-    case 'CLS':
-      return value <= 0.1 ? 'good' : value <= 0.25 ? 'meh' : 'poor';
     case 'FCP':
       return value <= 1800 ? 'good' : value <= 3000 ? 'meh' : 'poor';
     case 'TTFB':
       return value <= 800 ? 'good' : value <= 1800 ? 'meh' : 'poor';
+    case 'LOAD':
+      return value <= 3000 ? 'good' : value <= 5000 ? 'meh' : 'poor';
   }
 }
 
-function valueToText(metric: MetricKey, value: number) {
-  if (metric === 'CLS') return value.toFixed(3);
+function valueToText(_metric: MetricKey, value: number) {
   return `${Math.round(value)}ms`;
 }
 
@@ -64,7 +61,7 @@ export function SiteMetricsCards() {
         </div>
       </SourceCodeHover>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         {items.map(item => (
           <MetricCard
             key={item.key}

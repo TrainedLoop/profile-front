@@ -30,7 +30,7 @@
   },
   "metrics": {
     "title": "Site metrics",
-    "note": "Measured in your browser (INP updates after interaction).",
+    "note": "Measured in your browser.",
     "fcp": "FCP",
     "fcp_desc": "Time until the first content appears on screen.",
     "lcp": "LCP",
@@ -40,7 +40,11 @@
     "cls": "CLS",
     "cls_desc": "Visual stability (layout shifts) during load.",
     "ttfb": "TTFB",
-    "ttfb_desc": "Time to first byte from the server."
+    "ttfb_desc": "Time to first byte from the server.",
+    "load": "Load",
+    "load_desc": "Time until the page is fully loaded.",
+    "resources": "Resources",
+    "resources_desc": "Number of network requests (fewer is leaner)."
   },
   "hero": {
     "greeting": "Hello, I'm",
@@ -51,7 +55,7 @@
     "subdescription": "FullStack Developer with 10+ years of experience. Specialized in React Web applications, C# backend services, and React Native mobile development. Passionate about building robust APIs, seamless integrations, and delivering exceptional user experiences.",
     "techStack": "Tech Stack",
     "cta": {
-      "contact": "Get in Touch",
+      "contact": "Contact",
       "viewProjects": "View Projects",
       "viewMetrics": "View Metrics",
       "downloadCV": "Download CV"

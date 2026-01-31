@@ -1,4 +1,4 @@
-import { Linkedin, Github, Mail } from 'lucide-react';
+import { Linkedin, Github } from 'lucide-react';
 import cvPdfUrl from '@/assets/profile.pdf';
 
 export const TECH_STACK = ['React', 'TypeScript', 'C#', 'React Native', 'Node.js'] as const;
@@ -15,12 +15,6 @@ export const SOCIAL_LINKS = [
     icon: Github,
     ariaLabelKey: 'hero.social.github' as const,
     external: true,
-  },
-  {
-    href: 'mailto:contato@danielporto.com.br',
-    icon: Mail,
-    ariaLabelKey: 'hero.social.email' as const,
-    external: false,
   },
 ] as const;
 
